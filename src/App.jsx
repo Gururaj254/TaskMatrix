@@ -8,7 +8,7 @@ export default function App() {
   return (
     <>
       <h1>Task Matrix</h1>
-      <p>Friendly Task Manager Friendly App</p>
+      <p>Friendly Task Manager Application</p>
 
       <TaskForm />
       <TaskList />

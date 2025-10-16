@@ -16,7 +16,7 @@ export default function TaskForm() {
         </select>
 
          <select>
-            <option value = "genneral">General</option>
+            <option value = "general">General</option>
             <option value = "work">Work</option>
             <option value = "personal">Personal</option>
         </select>
