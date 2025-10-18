@@ -1,29 +1,51 @@
-import React, { useEffect } from 'react'
-import TaskForm from './Components/TaskForm'
-import TaskList from './Components/TaskList'
-import Progresstracker from './Components/Progresstracker'
-import './assets/index.css'
-import { useState } from 'react'
+
+import TaskList from "./Components/TaskList";
+import Progresstracker from "./Components/Progresstracker";
+import Taskform from "./Components/TaskForm";
+import { useEffect, useState } from "react";
+import "./Style.css";
 
 export default function App() {
-
   const [tasks, setTasks] = useState([]);
 
-  useEffect( () => {
-    localStorage.setItem("tasks", JSON.stringify(tasks ))
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks))
   });
-  const addTask = (task) => {
-    setTasks(...tasks,task);
-  }
-  return (
-    <>
-      <h1>Task Matrix</h1>
-      <p>Friendly Task Manager Application</p>
 
-      <TaskForm  addTask = {addTask}/>
-      <TaskList />
-      <Progresstracker />
-      <button>Clear all tasks</button>
-    </>
+  const addTask = (task) => {
+    setTasks([...tasks,task]);
+  }
+
+  const updateTask = (updatedTask, index) => {
+    const newtask = [...tasks];
+     newtask[index] = updatedTask;
+    setTasks(newtask);
+  }
+
+  const deleteTask = (index) => {
+      setTasks(tasks.filter((_, i) => i != index));
+  }
+
+  const clearTasks = () => {
+    setTasks([]);
+  }
+
+  return(
+    <div className="App">
+      <header>
+      <h1 className="title">Task Matrix</h1>
+      <p className="tagline">Our friendly TaskManager</p>
+      </header>
+      <Taskform addTask = {addTask}/>
+      <TaskList tasks = {tasks} 
+      updateTask = {updateTask}
+      deleteTask = {deleteTask}/>
+      <Progresstracker tasks = {tasks}/>
+
+      {tasks.length>0 && 
+      (<button onClick={clearTasks} className="clear-btn">Clear all tasks</button>)}
+      
+    </div>
   )
 }
+
