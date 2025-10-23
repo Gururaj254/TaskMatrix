@@ -31,9 +31,11 @@ export default function App() {
   }
 
   return(
+    
     <div className="App">
       <header>
       <h1 className="title">Task Matrix</h1>
+      
       <p className="tagline">Our friendly TaskManager</p>
       </header>
       <Taskform addTask = {addTask}/>
@@ -46,6 +48,7 @@ export default function App() {
       (<button onClick={clearTasks} className="clear-btn">Clear all tasks</button>)}
       
     </div>
+
   )
 }
 

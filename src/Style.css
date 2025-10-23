@@ -6,9 +6,16 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: blueviolet;
+  background: rgb(255, 192, 212);
+  animation-name: changeBackground;
+  animation-duration: 30s;
 }
 
+@keyframes changeBackground {
+   0%{background-color: palegreen}
+  20%{background-color: paleturquoise}
+  100% {background-color: purple}
+}
 .App {
   max-width: 720px;
   margin: 0 auto;
@@ -16,17 +23,26 @@ html, body {
 }
 
 header {
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 }
 
 header h1 {
   margin: 0 0 4px 0;
   font-size: 28px;
+  animation-name: changeColor;
+  animation-duration: 30s;
+}
+@keyframes  changeColor {
+  0%{background-color: pink;}
+  20%{background-color: aqua;}
+  100% {background-color: orangered;}
 }
 
 header p {
   margin: 0;
-  color: #555;
+  animation-name: changeColor;
+  animation-duration: 30s;
+  color: black;
 }
 
 .task-form {
@@ -132,3 +148,4 @@ header p {
   border-radius: 6px;
   cursor: pointer;
 }
+
