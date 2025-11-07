@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Gururaj254.github.io/TaskMatrix",
+  "homepage": "https://Gururaj254.github.io/Personal-Website",
+
 
   "scripts": {
     "dev": "vite",
